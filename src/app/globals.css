@@ -4,6 +4,8 @@
   --color-neon-cyan: #00f2ff;
   --color-neon-emerald: #10b981;
   --color-neon-blue: #3b82f6;
+  --color-neon-purple: #a855f7;
+  --color-neon-pink: #ec4899;
   
   --animate-blob: blob 7s infinite;
   --animate-float: float 6s ease-in-out infinite;
@@ -30,7 +32,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Inter, sans-serif;
-  overflow: hidden;
 }
 
 /* Custom Utilities */
@@ -54,17 +55,23 @@ body {
   }
 }
 
-/* Snap Scrolling Styles */
-.snap-container {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+.snap-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  height: 100vh;
-  width: 100%;
+@media (min-width: 768px) {
+  .snap-container {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }
