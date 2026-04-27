@@ -44,7 +44,7 @@ const translations: any = {
     aboutPara2: "Karşılaştığım problemleri çözerken yeni nesil araçları verimli bir şekilde kullanarak süreci hızlandırmayı ve pratik kalmayı seviyorum. Şu anda hem bilgilerimi pratiğe dökebileceğim hem de tecrübeli ekiplerden yeni şeyler öğrenebileceğim bir staj fırsatı arıyorum. Ayrıca staj sonrasında uyum sağlanması durumunda tam zamanlı olarak ekibin bir parçası olmaya da istekliyim.",
     quickInfo: "Kısa Bilgiler",
     infoKeys: { name: "İsim", age: "Yaş", dept: "Bölüm", class: "Sınıf", hobbies: "Hobiler" },
-    hobbyList: "Gitar, Kayak, Basketbol, Futbol, E-Spor (FIFA, LoL vb.)",
+    hobbyList: "Gitar, Kayak, Basketbol, Futbol, E-Spor",
     skillsHeader: "Stack",
     skillsTitle: "YETENEK SETİM",
     portfolioHeader: "Portfolyo",
@@ -67,7 +67,7 @@ const translations: any = {
     aboutPara2: "I enjoy using next-generation tools efficiently to speed up the process and stay practical while solving problems. Currently, I am looking for an internship opportunity where I can put my knowledge into practice and learn new things from experienced teams. I am also willing to become a full-time part of the team if there is a good fit after the internship.",
     quickInfo: "Quick Info",
     infoKeys: { name: "Name", age: "Age", dept: "Department", class: "Grade", hobbies: "Hobbies" },
-    hobbyList: "Guitar, Skiing, Basketball, Football, E-Sports (FIFA, LoL etc.)",
+    hobbyList: "Guitar, Skiing, Basketball, Football, E-Sports",
     skillsHeader: "Stack",
     skillsTitle: "MY SKILL SET",
     portfolioHeader: "Portfolio",
@@ -419,7 +419,7 @@ export default function Home() {
               {t.contactPara}
             </p>
             <a 
-              href="mailto:serdar@example.com" 
+              href="mailto:serdarrtml@gmail.com" 
               className="relative z-10 inline-flex items-center gap-3 px-8 py-4 rounded-full bg-neon-cyan text-[#030712] font-black text-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(0,242,255,0.3)]"
             >
               {t.contactBtn} <Mail size={24} />
