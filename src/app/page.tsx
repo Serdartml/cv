@@ -218,10 +218,11 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: HAKKIMDA */}
-      <section id="hakkimda" className="snap-section flex items-center justify-center p-6 py-12 md:py-6 relative">
+      <section id="hakkimda" className="snap-section relative z-10 flex items-center justify-center p-6 py-12 md:py-6">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="max-w-5xl w-full bg-glass p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] relative overflow-hidden"
         >
@@ -257,12 +258,9 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: YETENEKLER */}
-      <section id="yetenekler" className="snap-section flex items-center justify-center p-6 bg-[#020617]">
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="max-w-6xl w-full"
-        >
+      <section id="yetenekler" className="snap-section relative z-10 flex flex-col items-center justify-start p-6 pt-24 md:pt-32 bg-[#020617]">
+        <div className="max-w-6xl w-full">
+
           <div className="text-center mb-12">
             <h2 className="text-xs uppercase tracking-[0.4em] text-neon-cyan font-bold mb-4">{t.skillsHeader}</h2>
             <h3 className="text-3xl md:text-5xl font-black">{t.skillsTitle}</h3>
@@ -292,7 +290,7 @@ export default function Home() {
                   <motion.div 
                     initial={{ width: 0 }}
                     whileInView={{ width: skill.level }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     transition={{ duration: 1.5, delay: i * 0.1, ease: "easeOut" }}
                     style={{ backgroundColor: skill.color, boxShadow: `0 0 15px ${skill.color}66` }}
                     className="absolute inset-y-0 left-0 rounded-full"
@@ -302,7 +300,7 @@ export default function Home() {
                 <motion.div 
                   initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, delay: 0.4 + (i * 0.1) }}
                   className="mt-2 text-right"
                 >
@@ -313,16 +311,16 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* SECTION 4: PROJELER */}
-      <section id="projeler" className="snap-section flex items-center justify-center p-6 pt-24 md:pt-6">
+      <section id="projeler" className="snap-section relative z-10 flex flex-col items-center justify-start p-6 pt-24 md:pt-32">
         <div className="max-w-7xl w-full">
-           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 w-full">
               <div>
-                <h2 className="text-xs uppercase tracking-[0.4em] text-neon-blue font-bold mb-3">Portfolyo</h2>
-                <h3 className="text-4xl md:text-5xl font-black">PROJELERİM</h3>
+                <h2 className="text-xs uppercase tracking-[0.4em] text-neon-blue font-bold mb-3 italic">{t.portfolioHeader}</h2>
+                <h3 className="text-4xl md:text-5xl font-black">{t.portfolioTitle}</h3>
               </div>
            </div>
 
@@ -411,6 +409,7 @@ export default function Home() {
           <motion.div
              initial={{ scale: 0.9, opacity: 0 }}
              whileInView={{ scale: 1, opacity: 1 }}
+             viewport={{ once: true }}
              className="relative"
           >
             <div className="absolute -inset-10 bg-neon-cyan/20 blur-[100px] rounded-full animate-pulse"></div>
