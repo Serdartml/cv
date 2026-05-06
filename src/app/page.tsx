@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRight, 
-  Code2, 
-  Terminal, 
-  UserCircle2, 
-  Mail, 
-  ChevronDown, 
-  Cpu, 
+  ArrowRight,
+  Code2,
+  Terminal,
+  UserCircle2,
+  Mail,
+  ChevronDown,
+  Cpu,
   ExternalLink,
   Briefcase,
   Globe,
@@ -98,23 +98,23 @@ export default function Home() {
 
   return (
     <main className="snap-container bg-[#030712] text-slate-100 selection:bg-neon-cyan/30">
-      
+
       {/* Language Toggle */}
       <div className="fixed top-6 right-6 z-[100] flex gap-2">
-        <button 
+        <button
           onClick={() => setLang('tr')}
           className={`px-3 py-1.5 rounded-full text-xs font-black transition-all border ${lang === 'tr' ? 'bg-neon-cyan text-[#030712] border-neon-cyan shadow-[0_0_15px_rgba(0,242,255,0.3)]' : 'bg-white/5 text-slate-400 border-white/10 hover:bg-white/10'}`}
         >
           TR
         </button>
-        <button 
+        <button
           onClick={() => setLang('en')}
           className={`px-3 py-1.5 rounded-full text-xs font-black transition-all border ${lang === 'en' ? 'bg-neon-cyan text-[#030712] border-neon-cyan shadow-[0_0_15px_rgba(0,242,255,0.3)]' : 'bg-white/5 text-slate-400 border-white/10 hover:bg-white/10'}`}
         >
           EN
         </button>
       </div>
-      
+
       {/* Static Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-[#030712] via-[#06101e] to-[#030712]"></div>
@@ -125,18 +125,18 @@ export default function Home() {
       {/* SECTION 1: HERO */}
       <section id="home" className="snap-section relative flex flex-col items-center justify-center px-4 md:px-6 overflow-hidden py-4">
         <div className="max-w-5xl w-full flex flex-col items-center text-center relative z-10">
-          
+
           {/* Profile Section - Slightly smaller to avoid overflow */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative mb-6"
           >
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-white/15">
-              <img 
-                src="/profile.jpg" 
-                alt="Serdar Temel" 
+              <img
+                src="/profile.jpg"
+                alt="Serdar Temel"
                 className="w-full h-full object-cover object-[center_20%] scale-110"
               />
             </div>
@@ -158,7 +158,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -168,7 +168,7 @@ export default function Home() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-emerald to-neon-blue">SERDAR TEMEL</span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -177,7 +177,7 @@ export default function Home() {
             {t.heroDescription}
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.55 }}
@@ -192,14 +192,14 @@ export default function Home() {
           </motion.div>
 
           {/* Large Navigation Cards */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full mb-4"
           >
             {navCards.map((card, idx) => (
-              <button 
+              <button
                 key={idx}
                 onClick={() => scrollTo(card.id)}
                 className={`group relative p-3 h-20 md:h-28 rounded-2xl md:rounded-3xl bg-[#0f172a]/80 backdrop-blur-md border border-white/5 hover:border-white/20 transition-all duration-500 flex flex-col items-center justify-center gap-2 overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1`}
@@ -209,7 +209,7 @@ export default function Home() {
                   {card.icon}
                 </div>
                 <div className="text-center z-10">
-                   <h3 className="text-[10px] md:text-xs font-medium text-slate-200 group-hover:text-white tracking-wide transition-colors">{card.title}</h3>
+                  <h3 className="text-[10px] md:text-xs font-medium text-slate-200 group-hover:text-white tracking-wide transition-colors">{card.title}</h3>
                 </div>
               </button>
             ))}
@@ -219,7 +219,7 @@ export default function Home() {
 
       {/* SECTION 2: HAKKIMDA */}
       <section id="hakkimda" className="snap-section relative z-10 flex items-center justify-center p-6 py-12 md:py-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -265,7 +265,7 @@ export default function Home() {
             <h2 className="text-xs uppercase tracking-[0.4em] text-neon-cyan font-bold mb-4">{t.skillsHeader}</h2>
             <h3 className="text-3xl md:text-5xl font-black">{t.skillsTitle}</h3>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
             {[
               { name: "C", level: "95%", color: "#10b981" },
@@ -277,7 +277,7 @@ export default function Home() {
               { name: "Tailwind CSS", level: "90%", color: "#10b981" },
               { name: "Node.js & SQL", level: "75%", color: "#00f2ff" },
             ].map((skill, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 whileHover={{ y: -5 }}
                 className="p-3 pb-6 md:p-4 md:pb-8 rounded-2xl md:rounded-3xl bg-glass group transition-all relative overflow-hidden flex flex-col justify-between"
@@ -285,9 +285,9 @@ export default function Home() {
                 <div className="flex justify-between items-center mb-4">
                   <h4 className="text-base font-bold text-white group-hover:text-neon-cyan transition-colors">{skill.name}</h4>
                 </div>
-                
+
                 <div className="relative h-1.5 w-full bg-white/5 rounded-full mt-auto">
-                  <motion.div 
+                  <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: skill.level }}
                     viewport={{ once: true }}
@@ -296,8 +296,8 @@ export default function Home() {
                     className="absolute inset-y-0 left-0 rounded-full"
                   />
                 </div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0, y: 5 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
@@ -317,89 +317,89 @@ export default function Home() {
       {/* SECTION 4: PROJELER */}
       <section id="projeler" className="snap-section relative z-10 flex flex-col items-center justify-start p-6 pt-24 md:pt-32">
         <div className="max-w-7xl w-full">
-           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 w-full">
-              <div>
-                <h2 className="text-xs uppercase tracking-[0.4em] text-neon-blue font-bold mb-3 italic">{t.portfolioHeader}</h2>
-                <h3 className="text-4xl md:text-5xl font-black">{t.portfolioTitle}</h3>
-              </div>
-           </div>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 w-full">
+            <div>
+              <h2 className="text-xs uppercase tracking-[0.4em] text-neon-blue font-bold mb-3 italic">{t.portfolioHeader}</h2>
+              <h3 className="text-4xl md:text-5xl font-black">{t.portfolioTitle}</h3>
+            </div>
+          </div>
 
-           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-              {[
-                {
-                  title: "Lunata",
-                  desc: lang === 'tr' ? "Yapay zeka destekli, birçok alanda size yardımcı olan özel asistan maskotlarını içeren mobil uygulama." : "AI-powered mobile application featuring special assistant mascots to help you in many fields.",
-                  tag: "React Native • TS • AI",
-                  img: "/lunata-mobile.jpg",
-                  objPos: "center 15%",
-                  color: "purple",
-                  linkUrl: "https://lunata-website.vercel.app/",
-                  linkLabel: t.projectLabels.details,
-                  btnClass: "bg-[#a855f7] hover:bg-[#9333ea] text-white",
-                  tagClass: "bg-[#a855f7]/10 text-[#a855f7]"
-                },
-                {
-                  title: "Lunata Web",
-                  desc: lang === 'tr' ? "Lunata mobil uygulamasının tanıtım ve reklamı amacıyla hazırlanan, modern tasarımlı resmi web sitesi." : "Official website designed with a modern structure for the promotion and advertising of the Lunata mobile app.",
-                  tag: "React • Tailwind CSS",
-                  img: "/lunata-web.jpg",
-                  objPos: "center top",
-                  color: "cyan",
-                  linkUrl: "https://lunata-website.vercel.app/",
-                  linkLabel: t.projectLabels.details,
-                  btnClass: "bg-[#00f2ff] hover:bg-[#00d8e4] text-[#030712]",
-                  tagClass: "bg-[#00f2ff]/10 text-[#00f2ff]"
-                },
-                {
-                  title: "Mert Kitap Kırtasiye",
-                  desc: lang === 'tr' ? "Modern ve kullanıcı dostu bir yapıya sahip, yerel bir işletme için tasarlanmış reklam amaçlı kurumsal web sitesi." : "A modern and user-friendly corporate website designed for advertising purposes for a local business.",
-                  tag: "HTML/CSS • Tailwind CSS",
-                  img: "/mert-kirtasiye.jpg",
-                  objPos: "center top",
-                  color: "emerald",
-                  linkUrl: "https://mert-kitap-kirtasiye.vercel.app/",
-                  linkLabel: t.projectLabels.visit,
-                  btnClass: "bg-[#10b981] hover:bg-[#059669] text-white",
-                  tagClass: "bg-[#10b981]/10 text-[#10b981]"
-                },
-                {
-                  title: "Taskly",
-                  desc: lang === 'tr' ? "Kullanıcı deneyimini ön planda tutan, basit ama oldukça şık tasarımlı kişisel To-Do List (Görev Yöneticisi) mobil uygulaması." : "A personal To-Do List mobile application with a simple yet elegant design that prioritizes user experience.",
-                  tag: "React Native • UI/UX",
-                  img: "/taskly.JPG",
-                  objPos: "center",
-                  color: "blue",
-                  linkUrl: "https://github.com/Serdartml/mobilproje",
-                  linkLabel: t.projectLabels.github,
-                  btnClass: "bg-[#3b82f6] hover:bg-[#2563eb] text-white",
-                  tagClass: "bg-[#3b82f6]/10 text-[#3b82f6]"
-                }
-              ].map((proj, i) => (
-                <motion.div 
-                  key={i}
-                  whileHover={{ y: -4 }}
-                  className="group relative rounded-3xl overflow-hidden bg-[#0a0f1e] border border-white/5 shadow-2xl cursor-pointer flex flex-col"
-                  onClick={() => setSelectedProject(proj)}
-                >
-                  <div className="relative w-full h-52 md:h-60 overflow-hidden flex-shrink-0">
-                    <img
-                      src={proj.img}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                      style={{ objectPosition: (proj as any).objPos || 'center center' }}
-                      alt={proj.title}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1e]/30" />
-                  </div>
-                  <div className="p-5 md:p-6">
-                    <span className={`px-2.5 py-0.5 rounded-full ${proj.tagClass} text-[9px] font-bold uppercase tracking-wider mb-3 inline-block`}>
-                      {proj.tag}
-                    </span>
-                    <h4 className="text-lg md:text-xl font-black mb-2 group-hover:text-neon-cyan transition-colors">{proj.title}</h4>
-                    <p className="text-slate-400 text-xs font-light line-clamp-2 leading-relaxed italic">"{proj.desc}"</p>
-                  </div>
-                </motion.div>
-              ))}
-           </div>
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {[
+              {
+                title: "Lunata",
+                desc: lang === 'tr' ? "Yapay zeka destekli, birçok alanda size yardımcı olan özel asistan maskotlarını içeren mobil uygulama." : "AI-powered mobile application featuring special assistant mascots to help you in many fields.",
+                tag: "React Native • TS • AI",
+                img: "/lunata-mobile.jpg",
+                objPos: "center 15%",
+                color: "purple",
+                linkUrl: "https://play.google.com/store/apps/details?id=com.lunatamobile.app",
+                linkLabel: t.projectLabels.details,
+                btnClass: "bg-[#a855f7] hover:bg-[#9333ea] text-white",
+                tagClass: "bg-[#a855f7]/10 text-[#a855f7]"
+              },
+              {
+                title: "Lunata Web",
+                desc: lang === 'tr' ? "Lunata mobil uygulamasının tanıtım ve reklamı amacıyla hazırlanan, modern tasarımlı resmi web sitesi." : "Official website designed with a modern structure for the promotion and advertising of the Lunata mobile app.",
+                tag: "React • Tailwind CSS",
+                img: "/lunata-web.jpg",
+                objPos: "center top",
+                color: "cyan",
+                linkUrl: "https://www.lunatawebsite.com/",
+                linkLabel: t.projectLabels.details,
+                btnClass: "bg-[#00f2ff] hover:bg-[#00d8e4] text-[#030712]",
+                tagClass: "bg-[#00f2ff]/10 text-[#00f2ff]"
+              },
+              {
+                title: "Mert Kitap Kırtasiye",
+                desc: lang === 'tr' ? "Modern ve kullanıcı dostu bir yapıya sahip, yerel bir işletme için tasarlanmış reklam amaçlı kurumsal web sitesi." : "A modern and user-friendly corporate website designed for advertising purposes for a local business.",
+                tag: "HTML/CSS • Tailwind CSS",
+                img: "/mert-kirtasiye.jpg",
+                objPos: "center top",
+                color: "emerald",
+                linkUrl: "https://mert-kitap-kirtasiye.vercel.app/",
+                linkLabel: t.projectLabels.visit,
+                btnClass: "bg-[#10b981] hover:bg-[#059669] text-white",
+                tagClass: "bg-[#10b981]/10 text-[#10b981]"
+              },
+              {
+                title: "Taskly",
+                desc: lang === 'tr' ? "Kullanıcı deneyimini ön planda tutan, basit ama oldukça şık tasarımlı kişisel To-Do List (Görev Yöneticisi) mobil uygulaması." : "A personal To-Do List mobile application with a simple yet elegant design that prioritizes user experience.",
+                tag: "React Native • UI/UX",
+                img: "/taskly.JPG",
+                objPos: "center",
+                color: "blue",
+                linkUrl: "https://github.com/Serdartml/mobilproje",
+                linkLabel: t.projectLabels.github,
+                btnClass: "bg-[#3b82f6] hover:bg-[#2563eb] text-white",
+                tagClass: "bg-[#3b82f6]/10 text-[#3b82f6]"
+              }
+            ].map((proj, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -4 }}
+                className="group relative rounded-3xl overflow-hidden bg-[#0a0f1e] border border-white/5 shadow-2xl cursor-pointer flex flex-col"
+                onClick={() => setSelectedProject(proj)}
+              >
+                <div className="relative w-full h-52 md:h-60 overflow-hidden flex-shrink-0">
+                  <img
+                    src={proj.img}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                    style={{ objectPosition: (proj as any).objPos || 'center center' }}
+                    alt={proj.title}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0f1e]/30" />
+                </div>
+                <div className="p-5 md:p-6">
+                  <span className={`px-2.5 py-0.5 rounded-full ${proj.tagClass} text-[9px] font-bold uppercase tracking-wider mb-3 inline-block`}>
+                    {proj.tag}
+                  </span>
+                  <h4 className="text-lg md:text-xl font-black mb-2 group-hover:text-neon-cyan transition-colors">{proj.title}</h4>
+                  <p className="text-slate-400 text-xs font-light line-clamp-2 leading-relaxed italic">"{proj.desc}"</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -407,18 +407,18 @@ export default function Home() {
       <section id="iletisim" className="snap-section flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
         <div className="flex-1 flex flex-col items-center justify-center w-full max-w-4xl mx-auto">
           <motion.div
-             initial={{ scale: 0.9, opacity: 0 }}
-             whileInView={{ scale: 1, opacity: 1 }}
-             viewport={{ once: true }}
-             className="relative"
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            className="relative"
           >
             <div className="absolute -inset-10 bg-neon-cyan/20 blur-[100px] rounded-full animate-pulse"></div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-6 relative z-10">{t.contactTitle[0]} <br /> <span className="text-neon-blue">{t.contactTitle[1]}</span> {t.contactTitle[2]}</h2>
             <p className="text-base md:text-xl text-slate-400 font-light max-w-xl mx-auto mb-10 relative z-10 leading-relaxed">
               {t.contactPara}
             </p>
-            <a 
-              href="mailto:serdarrtml@gmail.com" 
+            <a
+              href="mailto:serdarrtml@gmail.com"
               className="relative z-10 inline-flex items-center gap-3 px-8 py-4 rounded-full bg-neon-cyan text-[#030712] font-black text-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(0,242,255,0.3)]"
             >
               {t.contactBtn} <Mail size={24} />
@@ -433,14 +433,14 @@ export default function Home() {
 
       <AnimatePresence>
         {selectedProject && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
             onClick={() => setSelectedProject(null)}
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, y: 50 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 50 }}
@@ -448,7 +448,7 @@ export default function Home() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className={`absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white/5 to-transparent pointer-events-none`}></div>
-              <button 
+              <button
                 className="absolute top-4 right-4 p-2.5 rounded-full bg-white/5 hover:bg-white/20 z-20 transition-all border border-white/10 text-white shadow-xl hover:rotate-90"
                 onClick={() => setSelectedProject(null)}
               >
